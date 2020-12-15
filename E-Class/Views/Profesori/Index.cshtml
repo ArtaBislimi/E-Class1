@@ -1,0 +1,84 @@
+﻿@model IEnumerable<E_Class.Models.Class_Model.Profesori>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+   
+<h2>Index</h2>
+
+<p style="margin-bottom:50px;">
+    @Html.ActionLink("Add", "Create", "Profesori", new { @class = "btn btn-primary pull-right" })
+</p>
+<table class="display" style="margin-top:5px !important;" id="profesorat-table">
+    <thead>
+        <tr>
+            <th>
+                Profesorat ID
+            </th>
+            <th>
+                Emri
+            </th>
+            <th>
+                Mbiemri
+            </th>
+            <th>
+                Mail
+            </th>
+            <th>
+                Created On
+            </th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProfesoratID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emri)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mbiemri)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedOn)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProfesoratID }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Edit", "Details", new { id = item.ProfesoratID }, new { @class = "btn btn-info" })
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProfesoratID }, new { @class = "btn btn-danger" })
+
+            </td>
+        </tr>
+            }
+        }
+    </tbody>
+
+</table>
+
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.13/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#profesorat-table").DataTable({
+                "dom": '<"pull-left"f><"pull-right"l>tip'
+            });
+        });
+    </script>
+}
+
+
+

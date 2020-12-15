@@ -1,0 +1,77 @@
+﻿@model IEnumerable<E_Class.Models.Class_Model.Salla>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<p style="margin-bottom:50px;">
+    @Html.ActionLink("Add", "Create", "Sallat", new { @class = "btn btn-primary pull-right" })
+</p>
+<table class="display" style="margin-top:5px !important;" id="Salla-table">
+    <thead>
+        <tr>
+            <th>
+                Salla ID
+            </th>
+            <th>
+                Numri Salles
+            </th>
+            <th>
+                 Tipi
+            </th>
+            <th>
+                Created On
+            </th>          
+           
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SallaID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumriSalles)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tipi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedOn)
+                    </td>
+                
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.SallaID }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Edit", "Details", new { id = item.SallaID }, new { @class = "btn btn-info" })
+
+                        @Html.ActionLink("Delete", "Delete", new { id = item.SallaID }, new { @class = "btn btn-danger" })
+
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+
+</table>
+
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.13/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#Salla-table").DataTable({
+                "dom": '<"pull-left"f><"pull-right"l>tip'
+            });
+        });
+    </script>
+    }
+
+  
