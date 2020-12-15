@@ -239,6 +239,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="image\book.png" />
+    <Content Include="image\gratis-png-aprendizaje-combinado-iconos-de-ordenador-educacion-formacion.png" />
     <Content Include="image\Logo-1-riinvest.png" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\easing.js" />

@@ -7,16 +7,16 @@
 }
 
 
-<div class="row">
+<div class="row" style="margin-left:40%;"  >
     <div class="col-md-8">
-        <section id="loginForm">
+        <section id="loginForm" >
 
             <div class="login">
                 <span class="fas fa-sign-in-alt" aria-hidden="true"></span>
                 <strong>Welcome!</strong>
                 <span>Sign in to your account</span>
 
-                <form action="Login" method="post" class="login-form">
+                <form action="Login" method="post" class="login-form" >
                     <fieldset>
                         @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                         {
@@ -48,7 +48,7 @@
                                     <a href="#url" class="forgot">forgot password?</a>
                                 </div>
                                 <div class="form-row button-login">
-                                    <button class="btn btn-login" type="submit" value="Log in">Login <span class="fas fa-arrow-right" aria-hidden="true"></span></button>
+                                    <button class="btn btn-login" type="submit" value="Log in" style="margin-left:30%;" >Login <span class="fas fa-arrow-right" aria-hidden="true"></span></button>
                                 </div>
                             </div>
 
