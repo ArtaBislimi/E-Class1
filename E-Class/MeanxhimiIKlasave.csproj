@@ -346,6 +346,8 @@
     <Content Include="Views\Lenda\Delete.cshtml" />
     <Content Include="Views\Profesori\Edit.cshtml" />
     <Content Include="Views\Profesori\Delete.cshtml" />
+    <Content Include="Views\Sallat\Edit.cshtml" />
+    <Content Include="Views\Sallat\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
