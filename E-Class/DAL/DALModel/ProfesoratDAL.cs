@@ -59,7 +59,7 @@ namespace E_Class.DAL.DALModel
 
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return false;
             }

@@ -19,7 +19,8 @@ namespace E_Class.Controllers.ControllerClass
         // GET: Sallat/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Salla salla = SallatDAL.Read(id);
+            return View("Details",salla);
         }
 
         // GET: Sallat/Create

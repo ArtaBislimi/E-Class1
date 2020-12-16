@@ -239,6 +239,7 @@
     <Content Include="css\style.css" />
     <Content Include="css\style4.css" />
     <Content Include="css\widgets.css" />
+    <Content Include="DAL\DatabaseScript\database.sql" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -347,13 +348,14 @@
     <Content Include="Views\Grupi\Create.cshtml" />
     <Content Include="Views\Grupi\Edit.cshtml" />
     <Content Include="Views\Grupi\Delete.cshtml" />
-    <Content Include="Views\Lenda\Edit.cshtml" />
     <Content Include="Views\Lenda\Delete.cshtml" />
     <Content Include="Views\Profesori\Edit.cshtml" />
     <Content Include="Views\Profesori\Delete.cshtml" />
     <Content Include="Views\Sallat\Edit.cshtml" />
     <Content Include="Views\Sallat\Delete.cshtml" />
     <Content Include="Views\Profesori\Details.cshtml" />
+    <Content Include="Views\Lenda\Details.cshtml" />
+    <Content Include="Views\Lenda\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

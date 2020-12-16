@@ -13,9 +13,9 @@ namespace E_Class.Models.Class_Model
         public int NumriSalles { get; set; }
         public char Tipi { get; set; }
 
-        [DataType(DataType.DateTime, ErrorMessage = "Please enter a valid date in the format dd/mm/yyyy hh:mm")]
+        [DataType(DataType.Date, ErrorMessage = "Please enter a valid date in the format dd/mm/yyyy hh:mm")]
         public DateTime CreatedOn { get; set; }
-        [DataType(DataType.DateTime, ErrorMessage = "Please enter a valid date in the format dd/mm/yyyy hh:mm")]
+        [DataType(DataType.Date, ErrorMessage = "Please enter a valid date in the format dd/mm/yyyy hh:mm")]
 
         public DateTime LastUpdate { get; set; }
 

@@ -20,7 +20,8 @@ namespace E_Class.Controllers.ControllerClass
         // GET: Lenda/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Lenda lenda = LendaDAL.Read(id);
+            return View("Details",lenda);
         }
 
         // GET: Lenda/Create
@@ -45,42 +46,53 @@ namespace E_Class.Controllers.ControllerClass
         // GET: Lenda/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(LendaDAL.Read(id));
         }
 
         // POST: Lenda/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Lenda collection)
         {
             try
             {
                 // TODO: Add update logic here
 
+                if (ModelState.IsValid)
+                {
+
+                    LendaDAL.Update(collection, id);
+                    return RedirectToAction("Index");
+                }
                 return RedirectToAction("Index");
+
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                return View("Index");
             }
         }
 
         // GET: Lenda/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(LendaDAL.Read(id));
         }
 
         // POST: Lenda/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Lenda lenda)
         {
             try
             {
-                // TODO: Add delete logic here
+                //if (ModelState.IsValid)
+                //{
+                LendaDAL.Delete(id);
+                return RedirectToAction("Index",lenda);
+                // }
 
-                return RedirectToAction("Index");
+                
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }

@@ -17,11 +17,11 @@ namespace E_Class.Models.Class_Model
         public string Libri { get; set; }
 
 
-        [DataType(DataType.DateTime, ErrorMessage = "Please enter a valid date in the format dd/mm/yyyy hh:mm")]
+        [DataType(DataType.Date, ErrorMessage = "Please enter a valid date in the format dd/mm/yyyy hh:mm")]
         public DateTime CreatedOn { get; set; }
 
 
-        [DataType(DataType.DateTime, ErrorMessage = "Please enter a valid date in the format dd/mm/yyyy hh:mm")]
+        [DataType(DataType.Date, ErrorMessage = "Please enter a valid date in the format dd/mm/yyyy hh:mm")]
         public DateTime LastUpdate { get; set; }
 
         public bool IsDeleted { get; set; }

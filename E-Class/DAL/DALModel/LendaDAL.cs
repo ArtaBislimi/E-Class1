@@ -38,7 +38,7 @@ namespace E_Class.DAL.DALModel
             }
         }
 
-        public static bool Update(Lenda lenda)
+        public static bool Update(Lenda lenda,int id)
         {
             var conn = DBHelper.GetConnection();
             try
@@ -46,10 +46,10 @@ namespace E_Class.DAL.DALModel
                 var cmd = new SqlCommand("dbo.usp_Lenda_Edit", conn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@LendaID", lenda.LendaID);
+                cmd.Parameters.AddWithValue("@LendaID",id);
                 cmd.Parameters.AddWithValue("@Emertimi", lenda.Emertimi);
                 cmd.Parameters.AddWithValue("@Libri", lenda.Libri);
-                cmd.Parameters.AddWithValue("@LastUpdate", lenda.LastUpdate);
+               
 
 
                 conn.Open();
@@ -113,7 +113,7 @@ namespace E_Class.DAL.DALModel
                         lenda.Emertimi = rdr["Emertimi"].ToString();
                         lenda.Libri = rdr["Libri"].ToString();
                         lenda.CreatedOn = DateTime.Parse(rdr["CreatedOn"].ToString());
-                        lenda.LastUpdate = DateTime.Parse(rdr["LastUpdated"].ToString()) == null ? DateTime.Now : DateTime.Parse(rdr["LastUpdated"].ToString());
+                      //  lenda.LastUpdate = DateTime.Parse(rdr["LastUpdated"].ToString()) == null ? DateTime.Now : DateTime.Parse(rdr["LastUpdated"].ToString());
 
                     }
                     return lenda;

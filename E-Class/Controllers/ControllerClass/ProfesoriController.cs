@@ -48,7 +48,7 @@ namespace E_Class.Controllers.ControllerClass
         // GET: Profesori/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(ProfesoratDAL.Read(id));
         }
 
         // POST: Profesori/Edit/5
@@ -77,7 +77,7 @@ namespace E_Class.Controllers.ControllerClass
         // GET: Profesori/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(ProfesoratDAL.Read(id));
         }
 
         // POST: Profesori/Delete/5
@@ -86,13 +86,13 @@ namespace E_Class.Controllers.ControllerClass
         {
             try
             {
-                if (ModelState.IsValid)
-                {
+                //if (ModelState.IsValid)
+                //{
                     ProfesoratDAL.Delete(id);
                     return RedirectToAction("Index",profesori);
-                }
+               // }
 
-                return View();
+            
             }
             catch(Exception ex)
             {
