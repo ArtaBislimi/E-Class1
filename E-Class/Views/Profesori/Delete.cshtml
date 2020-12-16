@@ -9,56 +9,45 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Lenda</h4>
+    <h4>Profesori</h4>
     <hr />
     <dl class="dl-horizontal table-responsive table table-bordered">
         <dt>
-            @Html.DisplayNameFor(model => model.Emertimi)
+            @Html.DisplayNameFor(model => model.ProfesoratID)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Emertimi)
+            @Html.DisplayFor(model => model.ProfesoratID)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Libri)
+            @Html.DisplayNameFor(model => model.Emri)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Libri)
+            @Html.DisplayFor(model => model.Emri)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.CreatedOn)
+            @Html.DisplayNameFor(model => model.Mbiemri)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CreatedOn)
+            @Html.DisplayFor(model => model.Mbiemri)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.LastUpdate)
+            @Html.DisplayNameFor(model => model.Mail)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LastUpdate)
+            @Html.DisplayFor(model => model.Mail)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsDeleted)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsDeleted)
-        </dd>
-
     </dl>
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>
     }

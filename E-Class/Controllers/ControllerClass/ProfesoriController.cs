@@ -89,7 +89,7 @@ namespace E_Class.Controllers.ControllerClass
                 if (ModelState.IsValid)
                 {
                     ProfesoratDAL.Delete(id);
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index",profesori);
                 }
 
                 return View();
