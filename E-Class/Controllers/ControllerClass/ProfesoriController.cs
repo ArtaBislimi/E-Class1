@@ -20,7 +20,8 @@ namespace E_Class.Controllers.ControllerClass
         // GET: Profesori/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Profesori profesori = ProfesoratDAL.Read(id);
+            return View("Details",profesori);
         }
 
         // GET: Profesori/Create
@@ -39,7 +40,8 @@ namespace E_Class.Controllers.ControllerClass
             {
                 return Redirect("Index");
             }
-            return View(profesori);
+            return Redirect("Index");
+         
 
         }
 
@@ -51,17 +53,24 @@ namespace E_Class.Controllers.ControllerClass
 
         // POST: Profesori/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Profesori collection)
         {
             try
             {
                 // TODO: Add update logic here
 
+                if (ModelState.IsValid)
+                {
+
+                    ProfesoratDAL.Update(collection,id);
+                    return RedirectToAction("Index");
+                }
                 return RedirectToAction("Index");
+
             }
             catch
             {
-                return View();
+                return View("Index");
             }
         }
 
@@ -73,15 +82,19 @@ namespace E_Class.Controllers.ControllerClass
 
         // POST: Profesori/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Profesori profesori)
         {
             try
             {
-                // TODO: Add delete logic here
+                if (ModelState.IsValid)
+                {
+                    ProfesoratDAL.Delete(id);
+                    return RedirectToAction("Index");
+                }
 
-                return RedirectToAction("Index");
+                return View();
             }
-            catch
+            catch(Exception ex)
             {
                 return View();
             }

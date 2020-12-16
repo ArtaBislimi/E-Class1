@@ -39,7 +39,7 @@ namespace E_Class.DAL.DALModel
             }
         }
 
-        public static bool Update(Profesori profesorat)
+        public static bool Update(Profesori profesorat, int id)
         {
             var conn = DBHelper.GetConnection();
             try
@@ -47,7 +47,7 @@ namespace E_Class.DAL.DALModel
                 var cmd = new SqlCommand("dbo.usp_Profesorat_Edit", conn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@ProfesoratID", profesorat.ProfesoratID);
+                cmd.Parameters.AddWithValue("@ProfesoratID", id);
                 cmd.Parameters.AddWithValue("@Emri", profesorat.Emri);
                 cmd.Parameters.AddWithValue("@Mbiemri", profesorat.Mbiemri);
                 cmd.Parameters.AddWithValue("@Mail", profesorat.Mail);
@@ -116,7 +116,7 @@ namespace E_Class.DAL.DALModel
                         profesorat.Mbiemri = rdr["Mbiemri"].ToString();
                         profesorat.Mail = rdr["Mail"].ToString();
                         profesorat.CreatedOn = DateTime.Parse(rdr["CreatedOn"].ToString());
-                        profesorat.LastUpdate = DateTime.Parse(rdr["LastUpdated"].ToString()) == null ? DateTime.Now : DateTime.Parse(rdr["LastUpdated"].ToString());
+                      //  profesorat.LastUpdate = DateTime.Parse(rdr["LastUpdated"].ToString()) == null ? DateTime.Now : DateTime.Parse(rdr["LastUpdated"].ToString());
 
                     }
                     return profesorat;
@@ -126,7 +126,7 @@ namespace E_Class.DAL.DALModel
                     return null;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return null;
             }
@@ -155,7 +155,7 @@ namespace E_Class.DAL.DALModel
                     profesorat.Mbiemri = rdr["Mbiemri"].ToString();
                     profesorat.Mail = rdr["Mail"].ToString();
                     profesorat.CreatedOn = DateTime.Parse(rdr["CreatedOn"].ToString());
-                    profesorat.LastUpdate = string.IsNullOrEmpty(rdr["LastUpdate"].ToString()) == true ? DateTime.Now : DateTime.Parse(rdr["LastUpdated"].ToString());
+                   // profesorat.LastUpdate = DateTime(rdr["LastUpdate"].ToString()) == true ? DateTime.Now : DateTime.Parse(rdr["LastUpdated"].ToString());
 
                     profesori.Add(profesorat);
                 }

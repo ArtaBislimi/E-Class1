@@ -43,7 +43,7 @@ namespace E_Class.DAL.DALModel
             var conn = DBHelper.GetConnection();
             try
             {
-                var cmd = new SqlCommand("dbo.usp_Students_Edit", conn);
+                var cmd = new SqlCommand("dbo.usp_Grupi_Edit", conn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@GrupiId", grupi.GrupiID);
