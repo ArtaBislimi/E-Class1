@@ -356,10 +356,14 @@
     <Content Include="Views\Profesori\Details.cshtml" />
     <Content Include="Views\Lenda\Details.cshtml" />
     <Content Include="Views\Lenda\Edit.cshtml" />
+    <Content Include="Views\Rezervimet\Index.cshtml" />
+    <Content Include="Views\Rezervimet\Details.cshtml" />
+    <Content Include="Views\Rezervimet\Create.cshtml" />
+    <Content Include="Views\Rezervimet\Edit.cshtml" />
+    <Content Include="Views\Rezervimet\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Rezervimet\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css.map" />

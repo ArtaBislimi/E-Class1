@@ -1,0 +1,75 @@
+﻿@model E_Class.Models.Class_Model.Rezervimet
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Rezervimet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RezervimeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RezervimeID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fillimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fillimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mbarimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mbarimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.statusi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.statusi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastUpdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastUpdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDeleted)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

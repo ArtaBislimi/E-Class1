@@ -1,0 +1,82 @@
+﻿@model IEnumerable<E_Class.Models.Class_Model.Rezervimet>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RezervimeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrupiID.EmriGrupi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProfesoriID.Emri)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SallaID.NumriSalles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LendaID.Emertimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fillimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mbarimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statusi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastUpdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RezervimeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fillimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mbarimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.statusi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastUpdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsDeleted)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
